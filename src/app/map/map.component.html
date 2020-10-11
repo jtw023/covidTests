@@ -1,0 +1,18 @@
+<google-map [height]="height" [width]="width" [zoom]="zoom" [center]="center">
+  <map-marker
+    *ngFor="let marker of parseFloat"
+    [position]="{ lng: marker.lng, lat: marker.lat }"
+    [title]="marker.name"
+    (mapClick)="
+      onClick(
+        marker.name,
+        marker.address,
+        marker.city,
+        marker.state,
+        marker.zipCode,
+        marker.phoneNumber,
+        marker.appointmentRequired
+      )
+    "
+  ></map-marker>
+</google-map>

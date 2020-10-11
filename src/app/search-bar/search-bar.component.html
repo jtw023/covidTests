@@ -1,0 +1,21 @@
+<nav class="navbar">Find USA COVID-19 Testing Centers</nav>
+<div>
+  <form class="search" (submit)="onSubmit($event)">
+    <input
+      autofocus
+      (input)="input = $event.target.value"
+      type="search"
+      name="zipcode"
+      id="zip"
+      placeholder="Enter Your 5 Digit Zipcode"
+    />
+    <button
+      [ngClass]="{ active: input.length < 1 }"
+      [disabled]="input.length !== 5"
+      type="submit"
+      id="button"
+    >
+      Submit
+    </button>
+  </form>
+</div>
